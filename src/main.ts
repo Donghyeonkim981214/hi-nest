@@ -9,3 +9,4 @@ async function bootstrap() {
 }
 bootstrap();
 //NestJS는 무조건 main.ts 파일을 갖는다. 이름도 변경해서는 안된다.
+//NestJS 어플리케이션은 main.ts에서 시작한다.

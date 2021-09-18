@@ -5,8 +5,14 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
+  //express의 get라우터와 같은 역할
   @Get()
   getHello(): string {
     return this.appService.getHello();
+  }
+
+  @Get('/hello')
+  sayHello(): string {
+    return 'Hello, everyone!';
   }
 }
