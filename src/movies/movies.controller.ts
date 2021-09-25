@@ -11,7 +11,9 @@ import {
 import { MoviesService } from './movies.service';
 import { Movie } from './entities/movie.entity';
 import { CreateMovieDto } from './dto/create-movie.dto';
+import { UpdateMovieDto } from './dto/update-movie.dto';
 
+//http://localhost:3000/movies/
 //아래의 'movies' 덕분에 해당 모듈로 접속하기 위한 url은 주소/movies가 된다. 물론 변경가능하며 지울 수도 있다.
 @Controller('movies')
 export class MoviesController {
@@ -41,9 +43,9 @@ export class MoviesController {
   remove(@Param('id') movieId: number) {
     return this.moviesService.deleteOne(movieId);
   }
-
+  
   @Patch(':id')
-  patch(@Param('id') movieId: number, @Body() updateData) {
+  patch(@Param('id') movieId: number, @Body() updateData: UpdateMovieDto) {
     return {
       updatedMovie: movieId,
       ...updateData,

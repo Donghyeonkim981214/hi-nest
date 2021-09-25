@@ -1,21 +1,10 @@
 import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
 
-@Controller()
+@Controller('')
 export class AppController {
-  constructor(private readonly appService: AppService) {}
-
-  //express의 get라우터와 같은 역할
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
-  }
-
-  //데코레이터의 경우 함수나 클래스에 붙여있어야 한다.
-  @Get('/hello')
-  sayHello(): string {
-    //NestJS는 controller와 service의 함수명이 같기를 권장하지만 그렇지 않다고 실행안되는 것은 아니다.
-    return this.appService.getHi();
+  home() {
+    return 'Welcome to my Movie API';
   }
 }
 
