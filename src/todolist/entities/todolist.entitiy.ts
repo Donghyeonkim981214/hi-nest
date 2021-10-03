@@ -1,3 +1,4 @@
+import { max, min } from 'class-validator';
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
